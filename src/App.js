@@ -7,8 +7,14 @@ import DogShow from './pages/DogShow'
 import DogNew from './pages/DogNew'
 import DogEdit from './pages/DogEdit'
 import NotFound from './pages/NotFound'
-
 import dogs from './mockDogs.js'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+
+import './App.css'
 
 class App extends Component {
   constructor(props){
@@ -20,16 +26,18 @@ class App extends Component {
   render() {
     console.log(this.state.dogs)
     return (
-      <>
+      <Router>
         <Header />
-        <Home />
-        <DogIndex />
-        <DogShow />
-        <DogNew />
-        <DogEdit />
-        <NotFound />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/dogindex" component={DogIndex} />
+          <Route path="/dogshow" component={DogShow} />
+          <Route path="/dognew" component={DogNew} />
+          <Route path="/dogedit" component={DogEdit}/>
+          <Route component={NotFound} />
+          </Switch>
         <Footer />
-      </>
+       </Router>
     )
   }
 }
