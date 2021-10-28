@@ -1,10 +1,16 @@
-
+@font-face {
+  font-family: "KsPuppyPartyRegular11n0";
+  src: local("KsPuppyPartyRegular11n0"),
+   url("./assets/fonts/KsPuppyPartyRegular-11n0.ttf") format("truetype");
+  font-weight: bold;
+  }
   
  
 * {
   margin: 0;
   padding: 0;
-  font-family: font-face;
+  font-family: KsPuppyPartyRegular11n0;
+  font-weight: bold
 }
 .page-body {
   text-align: center;
@@ -12,13 +18,14 @@
   height: 110vh;
 }
 
+
 /* ---HEADER--- */
 header {
-  background-color: #EBE0D0;
+  background-color: rgb(245, 220, 226);
   display: flex;
   justify-content: space-between;
 }
-.cat-logo {
+.dog-logo {
   width: 100px;
   margin-left: 20px;
 }
@@ -53,7 +60,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #FFFEF1;
+  background-color: rgb(245, 220, 226);
   display: flex;
   justify-content: space-around;
 }

@@ -11,9 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-@font-face {
-  font-family: "KsPuppyPartyRegular11n0";
-  src: local("KsPuppyPartyRegular11n0d"),
-   url("./assets/fonts/KsPuppyPartyRegular-11n0.ttf") format("truetype");
-  font-weight: bold;
-  }

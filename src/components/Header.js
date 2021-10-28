@@ -11,13 +11,13 @@ class Header extends Component {
       </NavLink>
       <div className="nav-links">
         <ul>
-          <NavLink to="/dogindex">Meet the Cats</NavLink>
+          <NavLink to="/dogindex">Meet the Dogs</NavLink>
         </ul>
         <ul>
-          <NavLink to="/dognew">Add a Cat</NavLink>
+          <NavLink to="/dognew">Add a Dog</NavLink>
         </ul>
         <ul>
-          <a target='blank'href="https://www.aspca.org/adopt-pet/adoptable-cats-your-local-shelter" id="aspca">Adopt a Dog!</a>
+          <a target='blank'href="https://www.aspca.org/nyc/aspca-adoption-center/adoptable-dogs" id="aspca">Adopt a Dog!</a>
         </ul>
       </div>
     </header>
