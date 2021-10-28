@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component} from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import DogIndex from './pages/DogIndex'
+import DogShow from './pages/DogShow'
+import DogNew from './pages/DogNew'
+import DogEdit from './pages/DogEdit'
+import NotFound from './pages/NotFound'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import dogs from './mockDogs.js'
+
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      dogs: dogs
+    }
+  }
+  render() {
+    console.log(this.state.dogs)
+    return (
+      <>
+        <Header />
+        <Home />
+        <DogIndex />
+        <DogShow />
+        <DogNew />
+        <DogEdit />
+        <NotFound />
+        <Footer />
+      </>
+    )
+  }
 }
-
 export default App;
