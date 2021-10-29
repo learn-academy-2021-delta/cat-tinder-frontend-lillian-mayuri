@@ -4,6 +4,7 @@ import Adapter from 'enzyme-adapter-react-16'
 import App from './App';
 import Home from './pages/Home'
 import DogIndex from './pages/DogIndex'
+import dogs from './mockDogs.js'
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -31,6 +32,6 @@ describe('When the app renders', () => {
     const renderedApp = shallow(<App/>)
     const renderedDogIndexRoute = renderedApp.find('[path="/dogindex"]')
 
-    expect(renderedDogIndexRoute.props().component).toEqual(DogIndex)
+    expect(renderedDogIndexRoute.props().render()).toEqual(<DogIndex dogs={dogs} />)
   })
 })
