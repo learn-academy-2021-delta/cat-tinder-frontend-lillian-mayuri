@@ -4,7 +4,7 @@ class DogEdit extends Component {
   render() {
     return (
       <>
-        <h3>I am the Dog Edit</h3>
+        <h1>I am the Dog Edit</h1>
       </>
     )
   }

@@ -4,14 +4,7 @@ class DogShow extends Component {
   render() {
     return (
       <>
-         <h3>Dog Details</h3>
-        { this.props.dog &&
-          <>
-            <p>{this.props.dog.name}</p>
-            <p>{this.props.dog.age}</p>
-            <p>{this.props.dog.enjoys}</p>
-          </>
-        }
+        <h1>I am the Dog Show</h1>
       </>
     )
   }

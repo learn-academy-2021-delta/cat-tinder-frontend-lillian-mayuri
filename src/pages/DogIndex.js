@@ -5,7 +5,7 @@ class DogIndex extends Component {
   render() {
     return (
       <>
-        <h3>Meet our Dog Friends</h3>
+        <h1>Meet our Dog Friends</h1>
         {this.props.dogs && this.props.dogs.map(dog => {
           return (
             <p key={dog.id}>
@@ -19,5 +19,4 @@ class DogIndex extends Component {
     )
   }
 }
-
 export default DogIndex
