@@ -37,7 +37,7 @@ class App extends Component {
             path="/dogshow/:id"
             render={(props) => {
               let id = props.match.params.id
-              let dog = this.state.dogs.find(c => c.id === +id)
+              let dog = this.state.dogs.find(d => d.id === +id)
               return <DogShow dog={dog} />
             }}
           />
