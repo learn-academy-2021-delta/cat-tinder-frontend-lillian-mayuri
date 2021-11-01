@@ -10,7 +10,8 @@ class DogNew extends Component {
         name: "",
         age: "",
         enjoys: ""
-      }
+      },
+      submitted: false
     }
   }
   handleChange = (e) => {
@@ -20,16 +21,16 @@ class DogNew extends Component {
     }
 
     handleSubmit = () => {
-      this.props.createNewDog(this.state.form)
+      this.props.createDog(this.state.form)
       this.setState({submitted: true})
     }
 
   render() {
-    console.log(this.state.form)
+    
     return (
       <>
-      <div className="catnew-container">
-        <h1>I am the Dog New</h1>
+      <div className="page-body">
+        <h1>Add a New Dog</h1>
         <Form>
           <FormGroup>
             <Label for="name">
@@ -64,13 +65,14 @@ class DogNew extends Component {
               value={this.state.form.enjoys}
             />
           </FormGroup>
-        </Form>
+       
           <Button
-            name="submit"
             onClick={this.handleSubmit}
+            name="submit"
             >
             Add a New Dog
           </Button>
+          </Form>
           {this.state.submitted && <Redirect to="/dogindex" />}
         </div>
       </>
