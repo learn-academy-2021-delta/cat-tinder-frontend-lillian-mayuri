@@ -23,6 +23,9 @@ class App extends Component {
       dogs: dogs
     }
   }
+  createDog = (newDog) => {
+    console.log(newDog)
+  }
   render() {
     console.log(this.state.dogs)
     return (
@@ -41,7 +44,11 @@ class App extends Component {
               return <DogShow dog={dog} />
             }}
           />
-          <Route path="/dognew" component={DogNew} />
+          <Route
+            path="/dognew"
+            render={(props) => <DogNew 
+            createDog={this.createDog}/>}
+            />
           <Route path="/dogedit" component={DogEdit}/>
           <Route component={NotFound} />
           </Switch>

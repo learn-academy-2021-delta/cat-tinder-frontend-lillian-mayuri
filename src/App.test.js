@@ -28,10 +28,8 @@ describe('When the app renders', () => {
   })
 
   it('provides a route "/dogindex" to the DogIndex component', () => {
-
     const renderedApp = shallow(<App/>)
-    const renderedDogIndexRoute = renderedApp.find('[path="/dogindex"]')
-
-    expect(renderedDogIndexRoute.props().render()).toEqual(<DogIndex dogs={dogs} />)
+    const dogIndex = renderedApp.find('[path="/dogindex"]')
+    expect(dogIndex.props().render()).toEqual(<DogIndex dogs={dogs} />)
   })
 })
