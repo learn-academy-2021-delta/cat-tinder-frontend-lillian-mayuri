@@ -20,12 +20,34 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      dogs: dogs
+      dogs:[]
     }
   }
-  createDog = (newDog) => {
-    console.log(newDog)
+
+  componentDidMount(){
+   this.readDog()
+ }
+
+ readDog = () => {
+    fetch("http://localhost:3000/dogs")
+    .then(response => response.json())
+    .then(dogArray => this.setState({dogs: dogArray}))
+    .catch(errors => (console.log(errors)))
   }
+
+  createDog = (newDog) => {
+    fetch("http://localhost:3000/dogs", {
+      body: JSON.stringify(newDog),
+      headers: {
+        "Content-Type" : "applidogion/json"
+      },
+      method: "POST"
+    })
+    .then(response => response.json())
+    .then(payload => this.readDog())
+    .catch(errors => (console.log(errors)))
+  }
+
   render() {
     console.log(this.state.dogs)
     return (
@@ -46,10 +68,16 @@ class App extends Component {
           />
           <Route
             path="/dognew"
-            render={(props) => <DogNew 
+            render={(props) => <DogNew
             createDog={this.createDog}/>}
             />
-          <Route path="/dogedit" component={DogEdit}/>
+          <Route path="/dogedit:id"
+            render={(props) => {
+              let id = props.match.params.id
+              let dog = this.state.dogs.find(d => d.id === +id)
+              return <DogEdit dog={dog} updateDog={this.updateDog } id={id} />
+            }}
+          />
           <Route component={NotFound} />
           </Switch>
         <Footer />
