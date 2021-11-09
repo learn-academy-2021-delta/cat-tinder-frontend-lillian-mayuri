@@ -83,3 +83,43 @@ footer {
   color: #e6549f;
   background-color: white;
 }
+/* ---HOME--- */
+.pinkbow {
+  height: 500px;
+  border-radius: 50%;
+  border: 3px 
+}
+/* ---INDEX--- */
+.index-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.card.card-body {
+  width: 300px;
+  background-color: #ffc774;
+  margin: 20px;
+}
+
+
+/* ---FORMS--- */
+form {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+input {
+  text-align: center;
+}
+div.form-group {
+  margin-bottom: 15px;
+}
+/* ---SHOW--- */
+.card-show.card.card-body {
+  margin: 0 auto;
+}
+.saddog {
+  height: 500px;
+  border-radius: 50%;
+  border: 3px 
+}

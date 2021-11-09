@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import saddog from '../assets/sad-dog.png'
 
 class NotFound extends Component {
   render() {
     return (
       <div className="page-body">
-        <h3>Sorry no dogs here!</h3>
-        <ul>
-        <NavLink to="/">Return to Home Page</NavLink>
-      </ul>
+        <h1>Sorry no dogs here!</h1>
+        <br />
+        <img src={saddog} alt="portrait of a dog on leash" className="saddog" />
+     
       </div>
     )
   }

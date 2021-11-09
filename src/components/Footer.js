@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
+
 class Footer extends Component {
   render() {
     return (
@@ -13,6 +14,9 @@ class Footer extends Component {
       </ul>
       <ul>
         <NavLink to="/dognew">Add a Dog</NavLink>
+      </ul>
+      <ul>
+        <NavLink to="/notfound">Not Found</NavLink>
       </ul>
     </footer>
   )
