@@ -7,7 +7,7 @@ import DogShow from './pages/DogShow'
 import DogNew from './pages/DogNew'
 import DogEdit from './pages/DogEdit'
 import NotFound from './pages/NotFound'
-import dogs from './mockDogs.js'
+
 import {
   BrowserRouter as Router,
   Route,
@@ -39,7 +39,7 @@ class App extends Component {
     fetch("http://localhost:3000/dogs", {
       body: JSON.stringify(newDog),
       headers: {
-        "Content-Type" : "applidogion/json"
+        "Content-Type" : "application/json"
       },
       method: "POST"
     })
@@ -47,9 +47,12 @@ class App extends Component {
     .then(payload => this.readDog())
     .catch(errors => (console.log(errors)))
   }
+   
+
+ 
 
   render() {
-    console.log(this.state.dogs)
+    
     return (
       <Router>
         <Header />
@@ -63,7 +66,7 @@ class App extends Component {
             render={(props) => {
               let id = props.match.params.id
               let dog = this.state.dogs.find(d => d.id === +id)
-              return <DogShow dog={dog} />
+              return <DogShow dog={dog} deleteDog={this.deleteDog}/>
             }}
           />
           <Route
@@ -85,4 +88,4 @@ class App extends Component {
     )
   }
 }
-export default App;
+export default App

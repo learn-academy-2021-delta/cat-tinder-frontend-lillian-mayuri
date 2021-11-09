@@ -7,9 +7,9 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe('When not found displays...', () => {
     it('displays one NavLink', () => {
-        const notFoundWrapper = shallow(<NotFound/>)
-        const navLinkWrapper = notFoundWrapper.find("NavLink")
+        const notFound = shallow(<NotFound/>)
+        const notFoundHeader = notFound.find("h1")
 
-        expect(navLinkWrapper.length).toEqual(1)
+        expect(notFoundHeader.text()).toEqual("Sorry no dogs here!")
     })
 })

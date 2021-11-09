@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Card, CardTitle, CardText } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
+
 class DogShow extends Component {
  render() {
    let {dog} = this.props
